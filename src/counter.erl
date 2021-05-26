@@ -17,6 +17,7 @@
     terminate/2,
     code_change/3
 ]).
+-export([next/0, current/0, increase/1]).
 
 -define(SERVER, ?MODULE).
 
@@ -52,3 +53,11 @@ code_change(_OldVsn, State, _Extra) ->
 %%%===================================================================
 %%% Internal functions
 %%%===================================================================
+
+next() ->
+    gen_server:call(?SERVER, next).
+current() ->
+    gen_server:call(?SERVER, current).
+
+increase(Delta) ->
+    gen_server:cast(?SERVER, {increase, Delta}).

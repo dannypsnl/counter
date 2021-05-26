@@ -8,7 +8,8 @@
   ]},
   {env, []},
   {modules, [
-    counter
+    counter,
+    counter_sup
   ]},
 
   {licenses, ["Apache 2.0"]},

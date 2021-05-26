@@ -21,7 +21,7 @@ init([]) ->
     },
     Counter = #{
         id => counter_serv,
-        start => {counter_serv, start_link, [10]},
+        start => {counter_serv, start_link, [0]},
         restart => permanent,
         shutdown => 2000,
         type => worker,

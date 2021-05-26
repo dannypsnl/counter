@@ -15,7 +15,7 @@ start_link() ->
 
 init([]) ->
     Counter = #{
-        id => 'AName',
+        id => 'counter',
         start => {'counter', start_link, [10]},
         restart => permanent,
         shutdown => 2000,

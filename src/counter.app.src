@@ -2,15 +2,14 @@
   {description, "An OTP library"},
   {vsn, "0.1.0"},
   {registered, []},
+  {mod, {counter_app, []}},
   {applications, [
     kernel,
-    stdlib
+    stdlib,
+    cowboy
   ]},
   {env, []},
-  {modules, [
-    counter,
-    counter_sup
-  ]},
+  {modules, []},
 
   {licenses, ["Apache 2.0"]},
   {links, []}

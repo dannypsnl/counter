@@ -4,7 +4,7 @@
 %%% @doc
 %%% @end
 %%%-------------------------------------------------------------------
--module(counter).
+-module(counter_serv).
 
 -behaviour(gen_server).
 

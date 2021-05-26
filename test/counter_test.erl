@@ -10,7 +10,7 @@
 -author("dannypsnl").
 
 -include_lib("eunit/include/eunit.hrl").
--import(counter, [start_link/1, next/0, current/0, increase/1]).
+-import(counter_serv, [start_link/1, next/0, current/0, increase/1]).
 
 simple_test() ->
     start_link(100),

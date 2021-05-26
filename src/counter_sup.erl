@@ -20,12 +20,12 @@ init([]) ->
         period => 30
     },
     Counter = #{
-        id => 'counter',
-        start => {'counter', start_link, [10]},
+        id => counter_serv,
+        start => {counter_serv, start_link, [10]},
         restart => permanent,
         shutdown => 2000,
         type => worker,
-        modules => ['counter']
+        modules => [counter_serv]
     },
     Children = [Counter],
     {ok, {SupFlags, Children}}.

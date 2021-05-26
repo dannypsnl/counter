@@ -14,6 +14,11 @@ start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
 
 init([]) ->
+    SupFlags = #{
+        strategy => one_for_one,
+        intensity => 5,
+        period => 30
+    },
     Counter = #{
         id => 'counter',
         start => {'counter', start_link, [10]},
@@ -22,13 +27,5 @@ init([]) ->
         type => worker,
         modules => ['counter']
     },
-
-    {ok,
-        {
-            #{
-                strategy => one_for_one,
-                intensity => 5,
-                period => 30
-            },
-            [Counter]
-        }}.
+    Children = [Counter],
+    {ok, {SupFlags, Children}}.

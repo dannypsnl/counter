@@ -37,8 +37,8 @@ handle_call(next, _From, State = #counter_state{count = Val}) ->
 handle_call(current, _From, State = #counter_state{count = Val}) ->
     {reply, Val, State}.
 
-handle_cast(_Request, State) ->
-    {noreply, State}.
+handle_cast({increase, Delta}, State = #counter_state{count = Val}) ->
+    {noreply, State#counter_state{count = Val + Delta}}.
 
 handle_info(_Info, State) ->
     {noreply, State}.
